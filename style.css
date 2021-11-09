@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Libre+Franklin:wght@300;600;700&family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap');
+*,
+::after,
+::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+header{
+    height: auto;
+    padding: 30px;
+
+}
+header img{
+    width:150px; 
+    
+    /* min-height: 100vh; */
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    background-image:linear-gradient(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
+}
+.container .left{
+    width: 100%;
+    height: auto;padding: 50px 30px 0px 30px;
+}
+.container .right{
+    width: 100%;
+    height: 300px;
+    background-image: url(./images/hero-mobile.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.container .left h1{
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: var(--Soft-Red);
+    text-transform: uppercase;
+    line-height: 3rem;
+    letter-spacing:0.5rem;
+    margin-bottom:1rem;
+}
+.container .left  h1 span{
+    color: var(--Dark-Grayish-Red);
+    font-weight: 600;
+}
+.container .left p{
+    color:var(--Desaturated-Red) ;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+form{
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+}
+.container form input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50px;
+    left: 0;
+    top: 0;
+    border:1px solid var(--Desaturated-Red);
+    padding-left: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--Soft-Red);    
+}
+.container form input::placeholder{
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--Desaturated-Red);
+}
+.container form button{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width:50px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-image:linear-gradient( 135deg,  hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 0px 0px 18px 1px var(--Desaturated-Red);
+}
+.container form button:hover{
+    background-image: linear-gradient(135deg,  hsl(0, 80%, 80%), hsl(0, 74%, 70%));
+}
+footer{
+    margin: 5rem 0;
+}
+.container form .error-icon{
+    display: inline-block;
+    position: absolute;
+    top:0.8rem;
+    right:4rem;
+    z-index: 9999;
+    display: none;
+}
+.container form .error-text{
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    left:2rem;
+    font-size: 1rem;
+    /* text-align: left; */
+    color: var(--Soft-Red);
+    display: none;
+}
+.container form.error .error-icon{
+    display: block;
+}
+.container form.error .error-text{
+    display: block;
+}
+.container form.error input{
+    border: 2px solid var(--Soft-Red);
+}
+@media only screen and (min-width:768px){
+    header{
+        position: absolute;
+        padding-left: 10%;
+    }
+    .container{
+        flex-direction: row;
+        padding-top:0;
+        padding-bottom: 0;
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-position:center;
+        background-size: cover;
+    }
+    .container .right{
+        width: 80%;
+        height: 100vh;
+        background-image: url(./images/hero-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+    .container .left{
+        height: 100vh;
+        padding-top: 20vh;
+        text-align: left;
+        padding-left: 10%;
+    }
+    .container .left h1{
+        font-size: 5rem;
+        line-height:1;
+    }
+    .container .left p{
+        font-size: 1.1rem;
+    }
+}
